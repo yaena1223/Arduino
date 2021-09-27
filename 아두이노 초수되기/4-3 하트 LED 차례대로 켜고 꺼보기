@@ -1,0 +1,21 @@
+const unsigned int led[12] = {8,7,6,5,4,3,2,14,15,16,17,18};
+void setup() {
+  // put your setup code here, to run once:
+  for(int x = 0;x<=11;x++){
+    pinMode(led[x],OUTPUT);
+  }
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  for(int x = 0;x<=11;x++){
+    for(int x = 0;x<=11;x++){
+    digitalWrite(led[x],LOW);
+    }
+    digitalWrite(led[x], HIGH);
+    delay(500);
+  }
+  
+}
