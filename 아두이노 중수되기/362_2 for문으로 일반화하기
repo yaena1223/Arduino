@@ -1,0 +1,23 @@
+const int led[6] = {3,5,6,9,10,11};
+const int analogPin = A0;
+void setup() {
+  // put your setup code here, to run once:
+
+  for(int x = 0;x<=5;x++){
+    pinMode(led[x],OUTPUT);
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int sensorInput = analogRead(analogPin);
+  for(int x = 0;x<=5;x++){
+    if(sensorInput/171>=1+x) 
+      analogWrite(led[x],255);
+    else if(sensorInput/171>=0+x) 
+      analogWrite(led[x], int(sensorInput%171/171.0*255));
+
+    
+  }
+  
+}
