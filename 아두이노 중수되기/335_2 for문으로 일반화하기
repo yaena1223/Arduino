@@ -1,0 +1,19 @@
+const int led[6] = {3,5,6,9,10,11};
+const int analogPin = A0;
+void setup() {
+  // put your setup code here, to run once:
+
+  for(int x = 0;x<=5;x++){
+    pinMode(led[x],OUTPUT);
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int sensorInput = analogRead(analogPin);
+  for(int x = 0;x<=5;x++){
+    if(sensorInput>1024/7*(1+x))digitalWrite(led[x],HIGH);
+    else digitalWrite(led[x],LOW);
+  }
+  
+}
